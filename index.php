@@ -1,203 +1,282 @@
-<?php include 'header-index.php'; ?>
+<?php include 'header_admin.php'; ?>	  
 
+    <section data-stellar-background-ratio="0.5">
+		<div id="home" class="position-relative text-center"></div>
+		<div class="position-absolute top-50 start-50 translate-middle h-50">			
+			<h5 class="text-danger fw-light">BIBLIOTECA</h5>					
+		</div> 
+	</section>
 	
-	<section data-stellar-background-ratio="0.5">
-		<div id="home-main" class="position-relative ">			
-		</div>
+	<div class="container-fluid m-2">
+		<ul class="breadcrumb mb-0 icono-prop">
+			<li class="breadcrumb-item">
+				<a href="index_admin.php"> 
+					<i class="fas fa-home text-danger"></i>
+				</a>
+			</li>
+			<li class="breadcrumb-item">
+				<span><small>Biblioteca</small></span>
+			</li>
+		</ul>
+	</div>		
+    
+   <div class="container">
+       <h3 class="text-center" style="font-size: 24px">Listados de Propiedades</h3>
+	   <br>	   
+	</div>
 
-		<!-- SEARCH-->		
-		<div class="container-fluid carousel-content text-white text-wrap fw-light form-row basic-select-wrapper position-absolute top-50 start-50 translate-middle w-75 h-50">
-			<div class="container-fluid  d-block bg-muted border border-1 rounded p-5">								
-				<form action="search.php" method="GET" class="row g-3 text-center justify-content-center">					
-					<div>
-						<h2 class="text-danger"><b>DESCUBRÍ TU PRÓXIMO LUGAR</b></h2>
-					</div>
-
-					<!-- Filter Search-->
-					<div class="container d-flex justify-content-around text-center" id="filter-property">  
-
-						<!-- Filtro de Operacion-->            										
-						<div class="col-md-4">	
-							<label class="input-select">Operación</label>
-							<select name="operacion" id="operacion" class="form-select input-select" aria-label="Default select example">
-								<option value="" data-select2-id="6" selected>-- Seleccione Tipo de Operacion --</option>
-								<option value="Alquiler">Alquiler</option>
-								<option value="Venta">Venta</option>                    
+	<div class="border row container-fluid m-2 p-2">
+       <!-- SECCION PARA INSERTAR PROPIEDADES -->
+	   <div class="border col-md-5 shadow-lg">
+            <div class="border card">
+                <div class="card-header label">
+                    <span><b><i class="fas fa-cubes"></i> AGREGAR PROPIEDADES</b></span>
+                </div>
+                <div class="card-body">
+                <p style="font-size: 12px"><span style="color: red">*</span> Datos obligatorios</p>
+                    <!-- Para recepcionar archivos uso enctype-->
+                    <form action="registrar.php" method="POST" enctype="multipart/form-data">
+                        <div class="row p-2">
+                            <div class="col-md-6">
+                                <label class="label">Tipo de Operación <span style="color: red">*</span></label>					  	
+                                <select required class="form-select label" aria-label="Default select example" name="operacion" id="operacion" style="font-size: 12px">
+                                    <option selected>-- Seleccione Operación --</option>                                    
+                                    <option value="Alquiler">Alquiler</option>
+                                    <option value="Venta">Venta</option>                              
+                                </select>
+                            </div>
+                            <div class="col-md-6">   
+                                <label class="label">Tipo de Propiedad <span style="color: red">*</span></label>
+                                <select required class="form-select label" name="tipo_propiedad" id="tipo_propiedad" style="font-size: 12px">
+                                    <option>-- Seleccione Propiedad --</option>
+                                    <option value="Terreno">Terreno</option>
+                                    <option value="Departamento">Departamento</option>
+                                    <option value="Casa">Casa</option>
+                                    <option value="Local">Local</option>
+                                    <option value="Deposito">Depósito</option>
+                                    <option value="Galpon">Galpón</option>
+                                    <option value="Oficina">Oficina</option>
+                                    <option value="EdificioComercial">Edificio Comercial</option>
+                                    <option value="Otros">Otros</option>
+                                </select>                                                             
+                            </div> 
+                        </div>                       
+                        <div class="p-2 label">                            
+                            <label for="titulo">Titulo <span style="color: red">*</span></label>
+                            <input required class="form-control" type="text" name="titulo" id="titulo" placeholder="Ingrese un Titulo">                                                                                   
+                        </div>                        
+                        <div class="p-2 label">
+                            <label for="imagen">Imagen de la Propiedad</label>
+                            <input required class="form-control" type="file" name ="imagen" id="image">
+                        </div>                         
+                        <!-- FILTRO: Ubicación -->
+						<div class="p-2 form-group" style="font-size: 12px">
+							<label class="input-select label">Ubicacion <span style="color: red">*</span></label>
+							<select required name="ubicacion" id="ubicacion" class="form-control form-select label" style="font-size: 12px">
+							    <option value="Abasto">Abasto</option>
+								<option value="Almagro">Almagro</option>
+								<option value="Bbalvanera">Balvanera</option>
+								<option value="Barracas">Barracas</option>
+								<option value="Barrio-Norte">Barrio Norte</option>
+								<option value="Belgrano">Belgrano</option>
+								<option value="Belgrano-r">Belgrano R</option>
+								<option value="Caballito">Caballito</option>
+								<option value="Canning">Canning (E. Echeverria)</option>
+								<option value="Centro">Centro (Capital Federal)</option>
+								<option value="Colegiales">Colegiales</option>
+								<option value="Congreso">Congreso</option>
+								<option value="Constitucion">Constitución</option>
+								<option value="Flores">Flores</option>
+								<option value="Las-canitas">Las Cañitas</option>
+								<option value="Monserrat">Monserrat</option>
+								<option value="Nunez">Nuñez</option>
+								<option value="Once">Once</option>
+								<option value="P.Centenario">P.Centenario</option>
+								<option value="Palermo">Palermo</option>
+								<option value="Palermo-Chico">Palermo Chico</option>
+								<option value="Palermo-Hollywood">Palermo Hollywood</option>
+								<option value="Palermo-Nuevo">Palermo Nuevo</option>
+								<option value="Palermo-Soho">Palermo Soho</option>
+								<option value="Parque-Chacabuco">Parque Chacabuco</option>
+								<option value="Plaza-S.Martin">Plaza S.Martin</option>
+								<option value="Recoleta">Recoleta</option>
+								<option value="Retiro">Retiro</option>
+								<option value="Tribunales">Tribunales</option>
+								<option value="Venado">Venado</option>
+								<option value="Villa-Crespo">Villa Crespo</option>
+								<option value="Villa-Devoto">Villa Devoto</option>
+								<option value="Villa-Gral.Mitre">Villa Gral.Mitre</option>
+								<option value="Villa-Ortuzar">Villa Ortuzar</option>
+								<option value="Villa-Urquiza">Villa Urquiza</option>
 							</select>
-						</div>  	      
+						</div>                                                  
+                        <div class="row p-2">
+                            <div class="col-md-3 label">                                                                
+                                <label for="superficie"><i class="fas fa-home"></i> Superficie</label>
+                                <input class="form-control" type="text" name="superficie" id="superficie" placeholder="mts2">
+                            </div>
+                            <div class="col-md-3 label">  
+                                <label><i class="fas fa-bed"></i> Ambientes</label>
+                                <select class="form-select label" name="ambientes" id="ambientes" style="font-size: 12px">
+                                    <option selected> Amb.</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>                                                                                                            
+                                </select>                                                                                              
+                            </div>                            
+                            <div class="col-md-3 label">
+                                <label><i class="fas fa-bath"></i> Baños</label>
+                                <select class="form-select label" name="banios" id="banios" style="font-size: 12px">
+                                    <option selected> Baños</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>                                                                                                            
+                                </select>                                                                                                      
+                            </div>
+                            <div class="col-md-3 label">
+                                <label for="importe">Importe</label>
+                                <input class="form-control" type="text" name="importe" id="importe" placeholder="$">
+                            </div> 
+                        </div>                    
+                        <div class="p-2 label">
+                            <label for="descripcion">Indique alguna descripción de la Propiedad</label>
+                            <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="4" placeholder="Indique alguna descripción"></textarea>
+                        </div>
+                        <div class="p-1 text-center">                        
+                            <input class="btn btn-outline-success" type="submit" value="Enviar" style="font-size: 12px">
+                        </div>
+                    </form>
+                </div> <!--cierra el body-->
+            </div><!--cierra el card-->            
+        </div><!--cierra el col--> 
 
-						<!-- FILTRO: Tipo de Propiedad-->
-						<div class="col-md-4">	
-							<label class="input-select">Tipo de Propiedad</label>
-							<select name="tipo_propiedad" id="tipo_propiedad" class="form-select input-select" aria-label="Default select example">
-							<option value="" data-select2-id="6" selected>-- Seleccione Tipo de Propiedad --</option>
-							<option value="1">Terreno</option>
-							<option value="2">Departamento</option>
-							<option value="3">Casa</option>
-							<option value="4">Local</option>
-							<option value="5">Depósito</option>
-							<option value="6">Galpón</option>
-							<option value="7">Oficina</option>
-							<option value="8">Edificio Comercial</option>
-							<option value="9">Otros</option>
-							</select>
-						</div>    						
+		<!-- SECCION PARA ELIMINAR Y MODIFICAR PROPIEDADES -->
+        <div class="col-md-7 shadow-lg">
+            <div class="card h-25">            
+                <div class="card-header label" style="overflow-y:scroll">
+                    <span><b><i class="fas fa-cubes"></i> EDICIÓN</b></span>
+                    <br> <br> 
+                    <table class="table-responsive table table-striped table-sm card-body cellspacing-0">
+                        <thead>
+                            <tr class="text-center">                                
+                                <th scope="col">#</th>
+                                <th scope="col">Operación</th>                        
+                                <th scope="col">Propiedad</th>     
+                                <th scope="col">Titulo</th>                            
+                                <th scope="col">Imagen</th>   
+                                <th scope="col">Ubicacion</th>                                
+                                <th scope="col">Superficie</th>    
+                                <th scope="col">Ambientes</th>    
+                                <th scope="col">Baños</th>    
+                                <th scope="col">Importe</th>
+                                <th scope="col">Descripcion</th>
+								<th scope="col">Acción</th>                                
+                            </tr>
+                        </thead>
+                        <tbody class="bodyContent">
 
-						<!-- FILTRO: Ubicación -->
-						<div class="col-md-3">
-							<label class="input-select">Ubicacion</label>
-							<select name="ubicacion" id="ubicacion" class="form-control form-select input-select" aria-label="Default select example">
-							<option value="" data-select2-id="6" selected> ¿Dónde?</option>
-							<option value="Abasto">Abasto</option>
-							<option value="Almagro">Almagro</option>
-							<option value="Balvanera">Balvanera</option>
-							<option value="Barracas">Barracas</option>
-							<option value="Barrio-Norte">Barrio Norte</option>
-							<option value="Belgrano">Belgrano</option>
-							<option value="Belgrano-r">Belgrano R</option>
-							<option value="Caballito">Caballito</option>
-							<option value="Canning">Canning (E. Echeverria)</option>
-							<option value="Centro">Centro (Capital Federal)</option>
-							<option value="Colegiales">Colegiales</option>
-							<option value="Congreso">Congreso</option>
-							<option value="Constitucion">Constitución</option>
-							<option value="Flores">Flores</option>
-							<option value="Las-Canitas">Las Cañitas</option>
-							<option value="Monserrat">Monserrat</option>
-							<option value="Nunez">Nuñez</option>
-							<option value="Once">Once</option>
-							<option value="P.Centenario">P.Centenario</option>
-							<option value="Palermo">Palermo</option>
-							<option value="Palermo-Chico">Palermo Chico</option>
-							<option value="Palermo-Hollywood">Palermo Hollywood</option>
-							<option value="Palermo-Nuevo">Palermo Nuevo</option>
-							<option value="Palermo-Soho">Palermo Soho</option>
-							<option value="Parque-Chacabuco">Parque Chacabuco</option>
-							<option value="Plaza-SMartin">Plaza S.Martin</option>
-							<option value="Recoleta">Recoleta</option>
-							<option value="Retiro">Retiro</option>
-							<option value="Tribunales">Tribunales</option>
-							<option value="Venado">Venado</option>
-							<option value="Villa-Crespo">Villa Crespo</option>
-							<option value="Villa-Devoto">Villa Devoto</option>
-							<option value="Villa-Gral.Mitre">Villa Gral.Mitre</option>
-							<option value="Villa-Ortuzar">Villa Ortuzar</option>
-							<option value="Villa-Urquiza">Villa Urquiza</option>
-							</select>
-						</div>                           						
+							<!-- Registros de la Base de Datos -->
+							<?php include 'listar.php'; ?>
 
-						<!-- BOTÓN: Buscar -->  
-						<div>
-							<a type="submit" class="btn btn-outline-danger mt-3" href="propiedades.php"><i class="fas fa-search mr-1"></i></a>
-						</div>
-					</div> <!-- FIN: Filter Search-->						
-				</form> <!--FIN DE FORMULARIO-->												
-			</div> 			
-		</div> <!-- FIN Filtro de Busqueda-->
-	</section>	
-	
-	<!--MAIN-->
-	<main>	
-		<div class="container-fluid  shadow-lg p-3 mb-5 bg-body rounded">
-			<!--Propieades Destacadas-->
-			<div class="shadow-lg p-3 mb-5 bg-body rounded">
-				<h2 class="text-center mt-4" style="font-size:20px">Propiedades Recomendadas</h2>
-				<br>
+							<!-- Leemos propiedades 1 por 1 -->
+							<?php foreach($propiedades as $propiedades){ ?>
 
-				<!-- Registros de la Base de Datos -->
-				<?php include 'admin/listar.php'; ?>
+							<tr class="input-select text-center">								 
+								<td scope="row"><?php echo $propiedades['id'];?></td>
+								<td><?php echo $propiedades['operacion'];?></td>
+								<td><?php echo $propiedades['tipo_propiedad'];?></td>      
+								<td><?php echo $propiedades['titulo'];?></td>                     
+								<td> <img width="100" src="imagenes/<?php echo $propiedades['imagen'];?>" alt="">  </td>
+								<td><?php echo $propiedades['ubicacion'];?></td>
+                                <td><?php echo $propiedades['superficie'];?></td>
+                                <td><?php echo $propiedades['ambientes'];?></td>
+                                <td><?php echo $propiedades['banios'];?></td>                                
+                                <td>USD <?php echo $propiedades['importe'];?></td> 									
+								<td><?php echo $propiedades['descripcion'];?></td>							
+								<td class="d-flex py-3">
+									<!-- <a name="borrar" id="borrar" type="button" class="btn btn-outline-danger m-1" href="index.php" onclick="confirmation(<?php echo $propiedades['id'];?>)"><i class="far fa-trash-alt"></i></a> -->
+									<button type="button" class="btn btn-outline-success editbtn" data-bs-toggle="modal" data-bs-target="#editar"><i class="far fa-edit"></i></button>
+									<button type="button" class="boton btn btn-outline-danger deletebtn" data-bs-toggle="modal" data-bs-target="#eliminar"><i class="far fa-trash-alt"></i></button>
+								</td>
+							</tr> 																	
 
-				<!--Cards-->
-				
-					<div class="d-flex justify-content-center align-items-center mb-4">
-						<div class="row row-cols-1 row-cols-md-3 g-4 w-75">
-							<div class="col">
-								<div class="card h-100">
-									<img src="img/prop1.jfif" class="card-img-top" alt="prop1">
-									<div class="card-body">
-										<h5 class="card-title" style="font-size:18px">Propiedad 1</h5>
-										<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
-									</div>
-									<div class="d-flex card-footer card__image-footer">																														
-										<img class="me-5" src="img/Logo.jpg" width="50" alt="">
-										<ul class="list-inline my-auto ml-auto">
-											<li class="list-inline-item"><h6 class="me-4" style="font-size:14px"><b>U$D 162.000</b></h6></li>
-										</ul>																				
-									</div>
-								</div>
-							</div>							
-							<div class="col">
-							<div class="card h-100">
-								<img src="img/prop2.jfif" class="card-img-top" alt="prop2">
-								<div class="card-body">
-									<h5 class="card-title" style="font-size:18px">Propiedad 2</h5>
-									<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
-								</div>
-								<div class="d-flex card-footer card__image-footer">																														
-									<img class="me-5" src="img/Logo.jpg" width="50" alt="">
-									<ul class="list-inline my-auto ml-auto">
-										<li class="list-inline-item"><h6 class="me-4" style="font-size:14px"><b>U$D 125.000</b></h6></li>
-									</ul>																				
-								</div>
-							</div>
-							</div>
-							<div class="col">
-							<div class="card h-100">
-								<img src="img/prop3.jfif" class="card-img-top" alt="prop3">
-								<div class="card-body">
-									<h5 class="card-title" style="font-size:18px">Propiedad 3</h5>
-									<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
-								</div>
-								<div class="d-flex card-footer card__image-footer">																														
-									<img class="me-5" src="img/Logo.jpg" width="50" alt="">
-									<ul class="list-inline my-auto ml-auto">
-										<li class="list-inline-item"><h6 class="me-4" style="font-size:14px"><b>U$D 158.000</b></h6></li>
-									</ul>																				
-								</div>
-							</div>
-							</div>
-						</div><!--END Cards-->			
-					</div> 			  						
-			</div><!--END Propieades Destacadas-->
-		</div>
-	
+							<?php #cerramos la llave del foreach
+                            } ?>    
+                                            
+                        </tbody>                                        
+                    </table>                                                               
+                        </div> <!--cierra el col--> 
 
-		<!--Porque elegirnos-->
-	<div id="scrollspyHeading1" class="container-fluid carousel carousel-dark slide" data-bs-ride="carousel">		
-		<div class="carousel-inner">
-		  <div class="carousel-item active w-100">
-			<img src="img/imgTraparent.png" class="img-responsive" width="1800" height="500" alt="...">
-			<div class="carousel-caption d-none d-md-block w-25">
-				<h3 class="card-title mb-4 text-danger" style="font-size:18px">¿POR QUÉ ELEGIRNOS?</h3>
-				<p class="card-text mb-4" style="font-size:14px">Contamos con más de 30 años de experiencia en asesoría inmobiliaria, consultoría y gestoría. A lo largo de todos estos años, acompañamos a nuestros clientes mediante la realización de más de 600.000 tareas de gestión guiados por los más altos estándares de calidad y seguridad. <br><br><br>
-					<span><b>¿Nos quieres conocer mejor?</b></span>
-				</p>
-				<!--Boton-->				
-				<div class="align-items-end text-center">										
-					<a type="btn" class="btn me-3 btn-outline-danger" style="font-size:12px" href="nosotros.php">CONOCER MÁS</a>
-				</div>				  
-			</div>
-		  </div>		  
-		</div>			  
-	</div> <!--END Porque elegirnos-->
-	
-	</main>							
+					<!--Ventana Modal para Actualizar--->
+					<?php  include('modalEdit.php'); ?>
 
-	<!--Tour de Videos-->
-	<div class="container-fluid">
-		<div class="shadow-lg p-3 mb-5 bg-body rounded ">
-			<div class="card mt-2">
-				<h2 class="text-center mt-5 mb-5">Tour de Videos</h2>				
-				<div class="d-flex justify-content-center mb-4">
-					<button type="button" class="btn btn-outline-dark">Conoce nuestras propiedades</button>				
-				</div>
-			</div>
-		</div>
-	</div> <!--END Tour de Videos-->			
-	
+					<!--Ventana Modal para la Alerta de Eliminar--->
+					<?php include('modalEliminar.php'); ?>
+                </div>
+		</div> <!-- CIERRA: Seccion para eliminar y modificar propiedades --> 
+	</div>
 
-	<?php include 'footer.php'; ?>  
-	<?php include 'script.php'; ?>
+<script>
+	$('.editbtn').on('click',function(){
+		$tr=$(this).closest('tr');
+		var datos=$tr.children("td").map(function () {
+            return $(this).text();
+        });
+        $('#update_id').val(datos[0]);
+        $('#operation').val(datos[1]);
+        $('#tipoprop').val(datos[2]);
+        $('#title').val(datos[3]);
+        $('#image').val(datos[4]);
+        $('#place').val(datos[5]);
+        $('#sup').val(datos[6]);
+        $('#amb').val(datos[7]);
+        $('#banio').val(datos[8]);
+        $('#precio').val(datos[9]);
+        $('#desc').val(datos[10]);
+	});
+</script>
 
-</body>
-</html>	
+
+<script>
+	$('.deletebtn').on('click',function(){
+		$tr=$(this).closest('tr');
+		var datos=$tr.children("td").map(function () {
+            return $(this).text();
+        });
+        $('#delete_id').val(datos[0]);       
+	});
+</script>
+
+    <script type="text/javascript">
+		window.addEventListener("scroll", function(){
+			var nav = document.querySelector("nav");
+			nav.classList.toggle("abajo",window.scrollY>0);
+
+			var nav = document.querySelector("nav");
+			nav.classList.toggle("abajo",window.scrollY>0);
+		})
+	</script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+
+	<script src="https://kit.fontawesome.com/8552914272.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>	   
