@@ -145,7 +145,7 @@
                         </div>                    
                         <div class="p-2 label">
                             <label for="descripcion">Indique alguna descripción de la Propiedad</label>
-                            <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="4" placeholder="Indique alguna descripción"></textarea>
+                            <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="4" placeholder="Indique alguna descripción" maxlength="50"></textarea>
                         </div>
                         <div class="p-2 label">
                             <label for="imagen">Imagen de la Propiedad</label>
