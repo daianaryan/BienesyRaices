@@ -10,7 +10,7 @@
 		<div class="container-fluid carousel-content text-white text-wrap fw-light form-row basic-select-wrapper position-absolute top-50 start-50 translate-middle w-75 h-50">
 			<div class="container-fluid d-block bg-muted border border-1 rounded">			
 				<br><br>					
-				<form action="search.php" method="GET" class="row g-3 text-center justify-content-center">									
+				<form action="propiedades.php" method="GET" class="row g-3 text-center justify-content-center">									
 					<h2 class="text-danger"><b>DESCUBRÍ TU PRÓXIMO LUGAR</b></h2>				
 
 					<!-- Filter Search-->
