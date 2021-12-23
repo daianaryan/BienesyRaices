@@ -1,7 +1,9 @@
 <?php include 'header_admin.php'; ?>	  
 
     <section data-stellar-background-ratio="0.5">
-		<div id="home" class="position-relative text-center"></div>
+		<div class="position-relative text-center">
+            <img src="../img/fondo.jpg" alt="" width="145%" style="filter: brightness(40%); position: relative; overflow: hidden; background-position: center center; background-size: cover; vertical-align: middle; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-height: 50vh; width: 100%; height: 50vh;">
+        </div>
 		<div class="position-absolute top-50 start-50 translate-middle h-50">			
 			<h5 class="text-danger fw-light">BIBLIOTECA</h5>					
 		</div> 
@@ -25,10 +27,10 @@
 	   <br>	   
 	</div>
 
-	<div class="border row container-fluid m-2 p-2">
+	<div class="row container-fluid m-2 p-2">
        <!-- SECCION PARA INSERTAR PROPIEDADES -->
-	   <div class="border col-md-5 shadow-lg">
-            <div class="border card">
+	   <div class="col-md-5 mb-2">
+            <div class="shadow-lg card">
                 <div class="card-header label">
                     <span><b><i class="fas fa-cubes"></i> AGREGAR PROPIEDADES</b></span>
                 </div>
@@ -39,7 +41,7 @@
                         <div class="row p-2">
                             <div class="col-md-6">
                                 <label class="label">Tipo de Operación <span style="color: red">*</span></label>					  	
-                                <select required class="form-select label" aria-label="Default select example" name="operacion" id="operacion" style="font-size: 12px">
+                                <select required class="form-select label mb-2" aria-label="Default select example" name="operacion" id="operacion" style="font-size: 12px">
                                     <option selected>-- Seleccione Operación --</option>                                    
                                     <option value="Alquiler">Alquiler</option>
                                     <option value="Venta">Venta</option>                              
@@ -48,7 +50,7 @@
                             <div class="col-md-6">   
                                 <label class="label">Tipo de Propiedad <span style="color: red">*</span></label>
                                 <select required class="form-select label" name="tipo_propiedad" id="tipo_propiedad" style="font-size: 12px">
-                                    <option>-- Seleccione Propiedad --</option>
+                                    <option selected>-- Seleccione Propiedad --</option>
                                     <option value="Terreno">Terreno</option>
                                     <option value="Departamento">Departamento</option>
                                     <option value="Casa">Casa</option>
@@ -64,16 +66,13 @@
                         <div class="p-2 label">                            
                             <label for="titulo">Titulo <span style="color: red">*</span></label>
                             <input required class="form-control" type="text" name="titulo" id="titulo" placeholder="Ingrese un Titulo">                                                                                   
-                        </div>                        
-                        <div class="p-2 label">
-                            <label for="imagen">Imagen de la Propiedad</label>
-                            <input required class="form-control" type="file" name ="imagen" id="image">
-                        </div>                         
+                        </div>                                                                         
                         <!-- FILTRO: Ubicación -->
-						<div class="p-2 form-group" style="font-size: 12px">
-							<label class="input-select label">Ubicacion <span style="color: red">*</span></label>
-							<select required name="ubicacion" id="ubicacion" class="form-control form-select label" style="font-size: 12px">
-							    <option value="Abasto">Abasto</option>
+                        <div class="p-2" style="font-size: 12px">   
+                            <label class="label">Ubicacion <span style="color: red">*</span></label>
+                            <select required class="form-select label" name="ubicacion" id="ubicacion" style="font-size: 12px">
+                                <option selected>-- Seleccione Ubicacion --</option>
+                                <option value="Abasto">Abasto</option>
 								<option value="Almagro">Almagro</option>
 								<option value="Bbalvanera">Balvanera</option>
 								<option value="Barracas">Barracas</option>
@@ -108,16 +107,16 @@
 								<option value="Villa-Gral.Mitre">Villa Gral.Mitre</option>
 								<option value="Villa-Ortuzar">Villa Ortuzar</option>
 								<option value="Villa-Urquiza">Villa Urquiza</option>
-							</select>
-						</div>                                                  
+                            </select>                                                             
+                        </div>					                                                 
                         <div class="row p-2">
                             <div class="col-md-3 label">                                                                
                                 <label for="superficie"><i class="fas fa-home"></i> Superficie</label>
-                                <input class="form-control" type="text" name="superficie" id="superficie" placeholder="mts2">
+                                <input class="form-control mb-2" type="text" name="superficie" id="superficie" placeholder="mts2">
                             </div>
                             <div class="col-md-3 label">  
                                 <label><i class="fas fa-bed"></i> Ambientes</label>
-                                <select class="form-select label" name="ambientes" id="ambientes" style="font-size: 12px">
+                                <select class="form-select label mb-2" name="ambientes" id="ambientes" style="font-size: 12px">
                                     <option selected> Amb.</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -129,7 +128,7 @@
                             </div>                            
                             <div class="col-md-3 label">
                                 <label><i class="fas fa-bath"></i> Baños</label>
-                                <select class="form-select label" name="banios" id="banios" style="font-size: 12px">
+                                <select class="form-select label mb-2" name="banios" id="banios" style="font-size: 12px">
                                     <option selected> Baños</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -148,6 +147,10 @@
                             <label for="descripcion">Indique alguna descripción de la Propiedad</label>
                             <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="4" placeholder="Indique alguna descripción"></textarea>
                         </div>
+                        <div class="p-2 label">
+                            <label for="imagen">Imagen de la Propiedad</label>
+                            <input required class="form-control" type="file" name ="imagen" id="image" accept="image/*">
+                        </div>
                         <div class="p-1 text-center">                        
                             <input class="btn btn-outline-success" type="submit" value="Enviar" style="font-size: 12px">
                         </div>
@@ -157,8 +160,8 @@
         </div><!--cierra el col--> 
 
 		<!-- SECCION PARA ELIMINAR Y MODIFICAR PROPIEDADES -->
-        <div class="col-md-7 shadow-lg">
-            <div class="card h-25">            
+        <div class="col-md-7">
+            <div class="card h-50 shadow-lg">            
                 <div class="card-header label" style="overflow-y:scroll">
                     <span><b><i class="fas fa-cubes"></i> EDICIÓN</b></span>
                     <br> <br> 
@@ -231,14 +234,14 @@
         $('#update_id').val(datos[0]);
         $('#operation').val(datos[1]);
         $('#tipoprop').val(datos[2]);
-        $('#title').val(datos[3]);
-        $('#image').val(datos[4]);
+        $('#title').val(datos[3]);        
         $('#place').val(datos[5]);
         $('#sup').val(datos[6]);
         $('#amb').val(datos[7]);
         $('#banio').val(datos[8]);
         $('#precio').val(datos[9]);
         $('#desc').val(datos[10]);
+        $('#image').val(datos[4]);
 	});
 </script>
 

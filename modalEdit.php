@@ -10,7 +10,7 @@
 			<div class="modal-body">
 				<!-- Formulario -->
 				<form action="editar.php" method="GET" enctype="multipart/form-data">
-					<input type="text" name="id" id="update_id">
+					<input class="m-2 border border-white" type="text" name="id" id="update_id" style="font-size: 12px">
 					<div class="row p-2">                                                  
 						<div class="col-md-6 form-group label" style="font-size: 12px">
 							<label>Tipo de Operación</label>					  	
@@ -38,15 +38,11 @@
 						<div class="p-2 form-group label" style="font-size: 12px">                                                                
 							<label for="titulo">Titulo</label>
 							<input class="form-control label" type="text" name="titulo" id="title" style="font-size: 12px">
-						</div>
-						<div class="p-2 form-group label" style="font-size: 12px">
-							<label for="imagen">Imagen</label>
-							<input class="form-control label" type="file" name ="imagen" id="image" style="font-size: 12px">
-						</div>	
+						</div>						
 						<!-- FILTRO: Ubicación -->
-						<div class="p-2 form-group label" style="font-size: 12px">
-							<label class="input-select label">Ubicacion</label>
-							<select required name="ubicacion" id="ubicacion" class="form-control form-select label" style="font-size: 12px">							
+						<div class="form-group label" style="font-size: 12px">   
+							<label>Ubicacion</label>
+							<select required class="form-select label" name="ubicacion" id="place" style="font-size: 12px">								
 								<option value="Abasto">Abasto</option>
 								<option value="Almagro">Almagro</option>
 								<option value="Bbalvanera">Balvanera</option>
@@ -82,8 +78,8 @@
 								<option value="Villa-Gral.Mitre">Villa Gral.Mitre</option>
 								<option value="Villa-Ortuzar">Villa Ortuzar</option>
 								<option value="Villa-Urquiza">Villa Urquiza</option>
-							</select>
-						</div>
+							</select> 
+						</div>						
 						<!--
 							<div class="p-2 form-group" style="font-size: 12px">
 							<label for="ubicacion">Ubicacion</label>
@@ -127,6 +123,10 @@
 						<label for="descripcion">Indique Descripción de la Propiedad</label>
 						<textarea class="form-control label" name="descripcion" id="desc" cols="30" rows="4" style="font-size: 12px"></textarea>
 					</div>
+					<div class="p-2 label" style="font-size: 12px">
+						<label for="imagen">Imagen</label>
+						<input class="form-control label" type="file" name ="imagen" id="image" style="font-size: 12px">
+					</div>	
 					<div class="modal-footer">
 						<button type="button" class="btn btn-outline-danger" style="font-size: 12px" data-bs-dismiss="modal">Cerrar</button>
 						<button type="submit" class="btn btn-outline-success" style="font-size: 12px">Guardar Cambios</button>
@@ -137,3 +137,8 @@
 	</div>
 </div> <!-- FIN: MODAL EDITAR-->
 
+<script>
+    $("#editar").draggable({
+    handle: ".modal-header"
+});
+</script>

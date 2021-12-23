@@ -23,14 +23,8 @@ $descripcion     = $_POST["descripcion"];
 # Creo una instancia(objeto) de la clase de conexion
 $conexion = new conexion();
 #$conexion = new conexion('localhost','root','','propiedades');
-$sql="INSERT INTO propiedades (id, operacion, tipo_propiedad, titulo, imagen, ubicacion, superficie, ambientes, banios, importe, descripcion) VALUES ('', '$operacion', '$tipo_propiedad', '$titulo', '$imagen', '$ubicacion', '$superficie', '$ambientes', '$banios', '$importe', '$descripcion');";
+$sql="INSERT INTO propiedades (id, operacion, tipo_propiedad, titulo, imagen, ubicacion, superficie, ambientes, banios, importe, descripcion) VALUES (null, '$operacion', '$tipo_propiedad', '$titulo', '$imagen', '$ubicacion', '$superficie', '$ambientes', '$banios', '$importe', '$descripcion');";
 $insertProp = $conexion->ejecutar($sql);
-
-#if ($imagen_tipo=="image/jpeg" || $imagen_tipo=="image/jpg" || $imagen_tipo=="image/png" || $imagen_tipo=="image/gif"){
- 
-#} else {
- #   echo "Solo se puede subir imagenes de tipo jpg/jpeg/png/gif";
-#}
 
 echo "<script type='text/javascript'>window.location='index.php';</script>";
 

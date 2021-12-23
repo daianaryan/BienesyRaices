@@ -8,24 +8,26 @@ $search = "SELECT * FROM propiedades";
 $sqlSearch = $conexion->consultar($search);
 $busqueda = null;
 
-if(isset($_GET['buscar'])){
+#if(isset($_GET['buscar'])){
 
-  $operacion      = $_GET['operacion'];
-  $tipo_propiedad = $_GET['tipo_propiedad'];     
-  $ubicacion      = $_GET['ubicacion'];  
-  $ambientes      = $_GET['ambientes'];
-  $banios         = $_GET['banios'];  
+ # $operacion      = $_GET['operacion'];
+ # $tipo_propiedad = $_GET['tipo_propiedad'];     
+ # $ubicacion      = $_GET['ubicacion'];  
+ # $ambientes      = $_GET['ambientes'];
+ # $banios         = $_GET['banios'];  
 
- $conexion = new conexion();  
+ #$conexion = new conexion();  
  #$conexion = new conexion('localhost','root','propiedades','');
- $search = "SELECT * FROM `propiedades` WHERE (operacion = '$operacion') or (tipo_propiedad = '$tipo_propiedad') or (ubicacion = '$ubicacion') or (ambientes = '$ambientes') or (banios = '$banios');";
- $sqlSearch = $conexion->consultar($search);
+ #$search = "SELECT * FROM `propiedades` WHERE (operacion = '$operacion') or (tipo_propiedad = '$tipo_propiedad') or (ubicacion = '$ubicacion') or (ambientes = '$ambientes') or (banios = '$banios');";
+ #$sqlSearch = $conexion->consultar($search);
 
-} 
+#} 
 ?>
 
 <section data-stellar-background-ratio="0.5">
-  <div id="home" class="position-relative text-center"></div>
+  <div class="position-relative text-center">
+	  <img src="../img/fondo.jpg" alt="" width="145%" style="filter: brightness(40%); position: relative; overflow: hidden; background-position: center center; background-size: cover; vertical-align: middle; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-height: 50vh; width: 100%; height: 50vh;">
+  </div>
   
   <div class="position-absolute top-50 start-50 translate-middle h-50">			
     <h5 class="text-danger fw-light">PÁGINA DE EDICIÓN</h5>					
@@ -49,7 +51,7 @@ if(isset($_GET['buscar'])){
 			<div class="d-flex mx-auto col txt-cards input-select" >
 				<div class="bg-body rounded card border border-1 shadow-lg mb-4" style="width: 16rem;"> <!-- style="width: 20rem; height: 28rem;" -->				
 					<div> <!-- style="height: 8rem;" -->
-						<img src="../imagenes/<?php echo $propiedad['imagen'];?>" class="img-fluid card-img-top" alt="Imagen" width="100">
+						<img src="imagenes/<?php echo $propiedad['imagen'];?>" class="img-fluid card-img-top" alt="Imagen" width="100">
 					</div>              
 					<div class="card-body">
 						<span class="badge badge-lg bg-danger"><?php echo $propiedad['operacion'];?></span> <br><br>

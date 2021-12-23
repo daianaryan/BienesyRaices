@@ -7,11 +7,12 @@ $operacion       = $_GET["operacion"];
 $tipo_propiedad  = $_GET["tipo_propiedad"];
 $titulo          = $_GET["titulo"];
  #Imagen
-$imagen          = $_FILES['imagen']['name'];        
-$imagen_temporal = $_FILES['imagen']['tmp_name'];#tenemos que guardar la imagen en una carpeta 
-$fecha           = new DateTime();#creamos una variable fecha para concatenar al nombre de la imagen, para que cada imagen sea distinta y no se pisen 
-$imagen          = $fecha->getTimestamp()."_".$imagen;        
-move_uploaded_file($imagen_temporal,"imagenes/".$imagen); 
+ #$imagen          = $_FILES['imagen']['name'];        
+ #$imagen_temporal = $_FILES['imagen']['tmp_name'];#tenemos que guardar la imagen en una carpeta 
+ #$fecha           = new DateTime();#creamos una variable fecha para concatenar al nombre de la imagen, para que cada imagen sea distinta y no se pisen 
+ #$imagen          = $fecha->getTimestamp()."_".$imagen;        
+ #move_uploaded_file($imagen_temporal,"imagenes/".$imagen); 
+$imagen          = $_GET["imagen"];
 $ubicacion       = $_GET["ubicacion"];
 $superficie      = $_GET["superficie"];
 $ambientes       = $_GET["ambientes"];

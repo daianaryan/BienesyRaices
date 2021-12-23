@@ -11,7 +11,7 @@ $conexion = new conexion();
 #recuperamos la imagen de la base antes de borrar 
 $imagen = $conexion->consultar("select imagen FROM propiedades where id=".$id);
 #la borramos de la carpeta 
-unlink("../imagenes/".$imagen[0]['imagen']);
+unlink("imagenes/".$imagen[0]['imagen']);
 
 #$conexion = new conexion('localhost','root','','propiedades');
 $sql ="DELETE FROM propiedades WHERE id = $id;"; 
