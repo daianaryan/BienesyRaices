@@ -59,13 +59,13 @@
       <div class="container w-25 shadow-lg">                
         <div class="container">
           <a href="../index.php" class="logo"><img class="position-relative text-decoration-transparent logo" width="75" src="../img/logo-sintexto.jpg" alt="logo"></a>
-          <h1 class="h3 mb-3 font-weight-normal" style="font-size: 22px">Ingresar al sistema</h1>                             
+          <h1 class="h3 mb-3 font-weight-normal" style="font-size: 20px">Ingresar al sistema</h1>                             
           <br>
           <div class="mb-3">
-            <input type="text" id="inputText" name="inputText" class="form-control"  style="font-size: 14px" placeholder="Email" required autofocus>
+            <input type="text" id="inputText" name="inputText" class="form-control"  style="font-size: 14px" placeholder="Usuario" required autofocus>
           </div>
           <div class="mb-3">
-            <input type="password" id="inputPassword" name="inputPassword"class="form-control"  style="font-size: 14px" placeholder="Password" required>
+            <input type="password" id="inputPassword" name="inputPassword"class="form-control"  style="font-size: 14px" placeholder="Contraseña" required>
           </div>
           <div class="p-2">
             <button class="btn btn-outline-danger btn-md btn-block" style="font-size: 14px" type="submit">Ingresar</button> 
