@@ -2,33 +2,33 @@
 
 	
 	<section data-stellar-background-ratio="0.5">
-		<div id="home-main" class="position-relative ">			
+		<div class="position-relative ">		
+			<img src="img/fondo.jpg" alt="" width="145%" style="filter: brightness(40%); position: relative; overflow: hidden; background-position: center center; background-size: cover; vertical-align: middle; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-height: 100vh; width: 100%;">
 		</div>
 
 		<!-- SEARCH-->		
 		<div class="container-fluid carousel-content text-white text-wrap fw-light form-row basic-select-wrapper position-absolute top-50 start-50 translate-middle w-75 h-50">
-			<div class="container-fluid  d-block bg-muted border border-1 rounded p-5">								
-				<form action="search.php" method="GET" class="row g-3 text-center justify-content-center">					
-					<div>
-						<h2 class="text-danger"><b>DESCUBRÍ TU PRÓXIMO LUGAR</b></h2>
-					</div>
+			<div class="container-fluid d-block bg-muted border border-1 rounded">			
+				<br><br>					
+				<form action="search.php" method="GET" class="row g-3 text-center justify-content-center">									
+					<h2 class="text-danger"><b>DESCUBRÍ TU PRÓXIMO LUGAR</b></h2>				
 
 					<!-- Filter Search-->
 					<div class="container d-flex justify-content-around text-center" id="filter-property">  
 
 						<!-- Filtro de Operacion-->            										
-						<div class="col-md-4">	
-							<label class="input-select">Operación</label>
+						<div class="m-1">	
+							<label class="input-select filterLabel">Operación</label>
 							<select name="operacion" id="operacion" class="form-select input-select" aria-label="Default select example">
-								<option value="" data-select2-id="6" selected>-- Seleccione Tipo de Operacion --</option>
+								<option value="" selected>-- Seleccione Tipo de Operacion --</option>
 								<option value="Alquiler">Alquiler</option>
 								<option value="Venta">Venta</option>                    
 							</select>
 						</div>  	      
 
 						<!-- FILTRO: Tipo de Propiedad-->
-						<div class="col-md-4">	
-							<label class="input-select">Tipo de Propiedad</label>
+						<div class="m-1">	
+							<label class="input-select">Propiedades</label>
 							<select name="tipo_propiedad" id="tipo_propiedad" class="form-select input-select" aria-label="Default select example">
 							<option value="" data-select2-id="6" selected>-- Seleccione Tipo de Propiedad --</option>
 							<option value="1">Terreno</option>
@@ -44,7 +44,7 @@
 						</div>    						
 
 						<!-- FILTRO: Ubicación -->
-						<div class="col-md-3">
+						<div class="m-1">
 							<label class="input-select">Ubicacion</label>
 							<select name="ubicacion" id="ubicacion" class="form-control form-select input-select" aria-label="Default select example">
 							<option value="" data-select2-id="6" selected> ¿Dónde?</option>
@@ -87,20 +87,21 @@
 						</div>                           						
 
 						<!-- BOTÓN: Buscar -->  
-						<div>
+						<div class="m-2">
 							<a type="submit" class="btn btn-outline-danger mt-3" href="propiedades.php"><i class="fas fa-search mr-1"></i></a>
 						</div>
 					</div> <!-- FIN: Filter Search-->						
-				</form> <!--FIN DE FORMULARIO-->												
+				</form> <!--FIN DE FORMULARIO-->
+				<br><br>												
 			</div> 			
 		</div> <!-- FIN Filtro de Busqueda-->
 	</section>	
 	
 	<!--MAIN-->
 	<main>	
-		<div class="container-fluid  shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="container-fluid  shadow-lg p-3 bg-body rounded">
 			<!--Propieades Destacadas-->
-			<div class="shadow-lg p-3 mb-5 bg-body rounded">
+			<div class="shadow-lg p-3 bg-body rounded">
 				<h2 class="text-center mt-4" style="font-size:20px">Propiedades Recomendadas</h2>
 				<br>
 
@@ -109,19 +110,19 @@
 
 				<!--Cards-->
 				
-					<div class="d-flex justify-content-center align-items-center mb-4">
+					<div class="d-flex justify-content-center align-items-center">
 						<div class="row row-cols-1 row-cols-md-3 g-4 w-75">
 							<div class="col">
 								<div class="card h-100">
 									<img src="img/prop1.jfif" class="card-img-top" alt="prop1">
 									<div class="card-body">
-										<h5 class="card-title" style="font-size:18px">Propiedad 1</h5>
-										<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
+										<h5 class="card-title" style="font-size:16px">Imperdible casa a estrenar!!</h5>
+										<p class="card-text" style="font-size:12px">Casa a estrenar con un parque amplio y muy iluminado.</p>
 									</div>
 									<div class="d-flex card-footer card__image-footer">																														
 										<img class="me-5" src="img/Logo.jpg" width="50" alt="">
-										<ul class="list-inline my-auto ml-auto">
-											<li class="list-inline-item"><h6 class="me-4" style="font-size:14px"><b>U$D 162.000</b></h6></li>
+										<ul class="list-inline my-auto ml-auto">											
+											<li class="list-inline-item"><h6 class="me-4" style="font-size:14px"><b> U$D 162.000</b></h6></li>											
 										</ul>																				
 									</div>
 								</div>
@@ -130,8 +131,8 @@
 							<div class="card h-100">
 								<img src="img/prop2.jfif" class="card-img-top" alt="prop2">
 								<div class="card-body">
-									<h5 class="card-title" style="font-size:18px">Propiedad 2</h5>
-									<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
+									<h5 class="card-title" style="font-size:16px">Dpto. en excelente ubicación</h5>
+									<p class="card-text" style="font-size:12px">Departamento de 2 ambientes al frente con balcon, muy amplio e iluminado. </p>
 								</div>
 								<div class="d-flex card-footer card__image-footer">																														
 									<img class="me-5" src="img/Logo.jpg" width="50" alt="">
@@ -142,11 +143,11 @@
 							</div>
 							</div>
 							<div class="col">
-							<div class="card h-100">
-								<img src="img/prop3.jfif" class="card-img-top" alt="prop3">
+							<div class="card h-100">								
+								<img src="img/prop3.jfif" class="card-img-top" alt="prop3">								
 								<div class="card-body">
-									<h5 class="card-title" style="font-size:18px">Propiedad 3</h5>
-									<p class="card-text" style="font-size:14px">Descripcion de la propiedad.</p>
+									<h5 class="card-title" style="font-size:16px">Quinta con pileta</h5>
+									<p class="card-text" style="font-size:12px">Exlente ubicacion en zona de quintas para 7 personas.</p>
 								</div>
 								<div class="d-flex card-footer card__image-footer">																														
 									<img class="me-5" src="img/Logo.jpg" width="50" alt="">
@@ -163,23 +164,21 @@
 	
 
 		<!--Porque elegirnos-->
-	<div id="scrollspyHeading1" class="container-fluid carousel carousel-dark slide" data-bs-ride="carousel">		
-		<div class="carousel-inner">
-		  <div class="carousel-item active w-100">
-			<img src="img/imgTraparent.png" class="img-responsive" width="1800" height="500" alt="...">
-			<div class="carousel-caption d-none d-md-block w-25">
-				<h3 class="card-title mb-4 text-danger" style="font-size:18px">¿POR QUÉ ELEGIRNOS?</h3>
-				<p class="card-text mb-4" style="font-size:14px">Contamos con más de 30 años de experiencia en asesoría inmobiliaria, consultoría y gestoría. A lo largo de todos estos años, acompañamos a nuestros clientes mediante la realización de más de 600.000 tareas de gestión guiados por los más altos estándares de calidad y seguridad. <br><br><br>
-					<span><b>¿Nos quieres conocer mejor?</b></span>
-				</p>
-				<!--Boton-->				
-				<div class="align-items-end text-center">										
-					<a type="btn" class="btn me-3 btn-outline-danger" style="font-size:12px" href="nosotros.php">CONOCER MÁS</a>
-				</div>				  
+		<div class="card">
+			<img src="img/imgTraparent.png" class="card-img" width="1800" height="470" alt="...">			
+			<div class="card-img-overlay w-100">
+				<div class="d-md-block m-4 p-4 chooseUs">				
+					<h5 class="card-title mb-2 text-danger" style="font-size:16px">¿POR QUÉ ELEGIRNOS?</h5> <br>
+					<p class="card-text mb-4" style="font-size:14px">Contamos con más de 30 años de experiencia en asesoría <br> inmobiliaria, consultoría y gestoría. A lo largo de todos estos <br> años, acompañamos a nuestros clientes mediante la realización <br> de más de 600.000 tareas de gestión guiados por los más altos <br> estándares de calidad y seguridad. <br><br>
+						<span><b>¿Nos quieres conocer mejor?</b></span>
+					</p>
+					<!--Boton-->				
+					<div class="align-items-end">										
+						<a type="btn" class="btn me-3 btn-danger" style="font-size:12px" href="nosotros.php">CONOCER MÁS</a>
+					</div>
+				</div>
 			</div>
-		  </div>		  
-		</div>			  
-	</div> <!--END Porque elegirnos-->
+		</div>
 	
 	</main>							
 
@@ -189,7 +188,7 @@
 			<div class="card mt-2">
 				<h2 class="text-center mt-5 mb-5">Tour de Videos</h2>				
 				<div class="d-flex justify-content-center mb-4">
-					<button type="button" class="btn btn-outline-dark">Conoce nuestras propiedades</button>				
+					<button type="button" class="btn btn-outline-danger" style="font-size:14px">Conoce nuestras propiedades</button>				
 				</div>
 			</div>
 		</div>

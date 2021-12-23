@@ -1,7 +1,9 @@
 <?php include 'header.php'; ?>
 
 <section data-stellar-background-ratio="0.5">
-  <div id="home" class="position-relative text-center"></div>
+  <div class="position-relative text-center">  	
+	<img src="img/fondo.jpg" alt="" width="145%" style="filter: brightness(40%); position: relative; overflow: hidden; background-position: center center; background-size: cover; vertical-align: middle; display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; min-height: 50vh; width: 100%; height: 50vh;">
+  </div>
   
   <div class="position-absolute top-50 start-50 translate-middle h-50">			
     <h5 class="text-danger fw-light">TASACIONES</h5>					
